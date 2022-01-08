@@ -38,13 +38,12 @@ contract YourContract {
   //Generic function change state 
   function setState(Phase x) public{
     if(msg.sender != chairperson){
-      revert("You are not allowed to do this")
+      revert("You are not allowed to do this");
     }
-    if(contractstate>x){
-      revert("You can't go back in states ")
+    if(contractState>x){
+      revert("You can't go back in states ");
     }
   }
-
   function setPurpose(string memory newPurpose) public {
       purpose = newPurpose;
       console.log(msg.sender,"set purpose to",purpose);
